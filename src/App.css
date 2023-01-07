@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #b9dee6;
   min-height: 100vh;
   display: flex;
   /* flex-direction: column;
@@ -48,17 +48,17 @@
 }
 
 .dnd-group {
-  background-color: #797a7e;
-  border-radius: 5px;
+  background-color: #83a1ef;
+  border-radius: 10px;
   padding: 10px;
 }
 .dnd-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 150px;
-  background-color: white;
-  border-radius: 5px;
+  min-height: 85px;
+  background-color: rgb(227, 232, 239);
+  border-radius: 15px;
   color: black;
   font-weight: bold;
 }
@@ -75,9 +75,13 @@
   text-align: left;
   margin-bottom: 5px;
   font-size: 20px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-left: 20px;
+
 
 }
 
 .current{
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
