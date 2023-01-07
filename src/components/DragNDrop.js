@@ -26,8 +26,15 @@ export const DragNDrop = ({ data }) => {
 
     const handleDragEnter = (e,params) => {
         console.log("entering drag..", params);
+        const currentItem =dragItem.current;
         if (e.target !== dragNode.current) {
             console.log('target is not same');
+            setList(oldList => {
+                let newList = JSON.parse(JSON.stringify(oldList));
+                newList[params.grpI].items.splice(params.grpI, 0, newList[currentItem.grpI].items.splice(currentItem.itemI, 1)[0]);
+                dragItem.current = params;
+                return newList;
+            })
         }
     }
 
