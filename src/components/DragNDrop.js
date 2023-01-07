@@ -24,8 +24,11 @@ export const DragNDrop = ({ data }) => {
         dragItem.current = null;
     }
 
-    const handleDragEnter = (e) => {
-        console.log("entering drag..")
+    const handleDragEnter = (e,params) => {
+        console.log("entering drag..", params);
+        if (e.target !== dragNode.current) {
+            console.log('target is not same');
+        }
     }
 
     const getStyles = (params) => {
@@ -45,7 +48,7 @@ export const DragNDrop = ({ data }) => {
                         <div
                             draggable
                             onDragStart={(e) => { handleDragStart(e, { grpI, itemI }) }}
-                            onDragEnter={dragging ? handleDragEnter : null}
+                            onDragEnter={dragging ? (e) => { handleDragEnter(e, { grpI, itemI })} : null}
                             key={item}
                             className={dragging ? getStyles({ grpI, itemI }) : 'dnd-item'}>
                             {item}
