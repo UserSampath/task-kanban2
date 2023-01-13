@@ -24,9 +24,9 @@ export const DragNDrop = ({ data }) => {
         dragItem.current = null;
     }
 
-    const handleDragEnter = (e,params) => {
+    const handleDragEnter = (e, params) => {
         console.log("entering drag..", params);
-        const currentItem =dragItem.current;
+        const currentItem = dragItem.current;
         if (e.target !== dragNode.current) {
             console.log('target is not same');
             setList(oldList => {
@@ -52,14 +52,14 @@ export const DragNDrop = ({ data }) => {
                 <div
                     key={grp.title}
                     className='dnd-group'
-                    onDragEnter={dragging && !grp.items.length?(e)=>{handleDragEnter(e,{grpI,item:0})} :null}
+                    onDragEnter={dragging && !grp.items.length ? (e) => { handleDragEnter(e, { grpI, item: 0 }) } : null}
                 >
                     <div className='group-title'> {grp.title}</div>
                     {grp.items.map((item, itemI) => (
                         <div
                             draggable
                             onDragStart={(e) => { handleDragStart(e, { grpI, itemI }) }}
-                            onDragEnter={dragging ? (e) => { handleDragEnter(e, { grpI, itemI })} : null}
+                            onDragEnter={dragging ? (e) => { handleDragEnter(e, { grpI, itemI }) } : null}
                             key={item}
                             className={dragging ? getStyles({ grpI, itemI }) : 'dnd-item'}>
                             {item}
