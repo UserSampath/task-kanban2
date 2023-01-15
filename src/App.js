@@ -35,14 +35,15 @@ function App() {
 
   return (
     <div className="App">
-
+      <div className='bg'>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
         <button>Save</button>
       </form>
       <header className="App-header">
         <DragNDrop data={list} />
-      </header>
+        </header>
+      </div>
     </div>
   );
 }
